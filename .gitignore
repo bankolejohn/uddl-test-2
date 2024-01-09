@@ -5,7 +5,7 @@
 *.g
 *.zip
 *.prefs
-*.jar
+# *.jar
 *.class
 **/xtend-gen/*
 **/target/*
