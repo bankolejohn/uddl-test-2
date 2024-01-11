@@ -46,6 +46,16 @@ jobs:
         name: my-artifact
         path: target
 
+  dispatch-to-other-repos:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Dispatch event to trigger workflows
+      uses: peter-evans/repository-dispatch@v2
+      with:
+        repository: bankolejohn/uddl-test-2
+        event-type: trigger-build-event
+
 
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
