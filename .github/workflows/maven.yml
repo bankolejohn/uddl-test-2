@@ -51,7 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Dispatch event to trigger workflows
-      uses: peter-evans/repository-dispatch@v2
+      uses: peter-evans/repository-dispatch@v2.1.2
       with:
         repository: bankolejohn/uddl-test-2
         event-type: trigger-build-event
