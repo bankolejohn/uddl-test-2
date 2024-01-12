@@ -1,0 +1,51 @@
+pipeline {
+    agent any
+    
+    tools {
+        maven 'maven'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Check out the source code from your version control system (e.g., Git)
+                echo 'checkout ok'
+            
+        
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // Run Maven build
+                sh 'mvn clean install'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Run Maven tests
+                sh 'mvn test'
+            }
+        }
+
+        stage('Package') {
+            steps {
+                // Create a JAR or WAR file (adjust the packaging type based on your project)
+                sh 'mvn package'
+            }
+        }
+    }
+
+    post {
+        success {
+            // Add post-build actions or notifications for successful builds
+            echo 'Build successful!'
+        }
+
+        failure {
+            // Add post-build actions or notifications for failed builds
+            echo 'Build failed! Please check the build logs for details.'
+        }
+    }
+}
