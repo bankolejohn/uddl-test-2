@@ -32,13 +32,17 @@ jobs:
       # run: mvn -B package --file pom.xml
       run: |
         mvn -B package --file pom.xml
-        mkdir stage && cp target/*.jar stage
+        mkdir stage
 
     - name: upload artifact
       uses: actions/checkout@v3
       with:
         name: workflow-artifact
         path: stage
+
+    - name: list files
+      run:
+        ls-R
 
   # upload-artifact:
   #   runs-on: ubuntu-latest
