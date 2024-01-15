@@ -41,10 +41,9 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Upload JAR file
-      uses: actions/upload-artifact@v3
-      with:
-        name: my-artifact
-        path: /targeted
+      uses: actions/download-artifact@v3
+    - name: display structure of downloaded files
+      run: ls -R
 
  
 
