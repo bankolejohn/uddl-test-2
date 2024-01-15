@@ -42,7 +42,7 @@ jobs:
 
     - name: list files
       run:
-        ls-R
+        ls -R
 
   # upload-artifact:
   #   runs-on: ubuntu-latest
