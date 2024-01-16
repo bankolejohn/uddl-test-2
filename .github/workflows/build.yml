@@ -19,7 +19,7 @@ jobs:
           mkdir -p $GITHUB_WORKSPACE/jar-artifacts  # Create a directory to store JAR files
 
           # Iterate through each module and copy JAR files to the common folder
-          for module in com.epistimis.uddl com.epistimis.uddl.ide com.epistimis.uddl.ui com.epistimis.uddl.web; do
+          for module in com.epistimis.uddl.query.feature com.epistimis.uddl.query.ide com.epistimis.uddl.query.ui com.epistimis.uddl.query.web; do
             cd $module
             mvn clean install
             cp target/*.jar ../jar-artifacts/
